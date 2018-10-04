@@ -1,0 +1,260 @@
+@import "config";
+@import "menu";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include background;
+  background: $primary-color;
+  color: #fff;
+  height: 100%;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.logo {
+  width: 500px;
+  display: flex;
+  padding-top: 3rem;
+  margin: auto;
+}
+
+// Headings
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 550;
+
+  &.lg-heading {
+    font-size: 6rem;
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primary-color, 02), 0.5);
+  }
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+main {
+  height: 100%;
+  padding: 4rem;
+
+  .icons {
+    margin-top: 1rem;
+
+    a {
+      padding: 0.6rem;
+
+      &:hover {
+        color: $secondary-color;
+        @include transition();
+      }
+    }
+  }
+
+  &#home {
+    height: 100%;
+    overflow: hidden;
+    h1 {
+      margin-top: 15vh;
+    }
+  }
+}
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "bioimage bio bio"
+    "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr);
+
+  .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+  }
+
+  .bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+  }
+
+  .job-1 {
+    grid-area: job1;
+  }
+
+  .job-2 {
+    grid-area: job2;
+  }
+
+  .job-3 {
+    grid-area: job3;
+  }
+
+  .job {
+    background: lighten($primary-color, 5);
+    padding: 10px;
+    border-bottom: $secondary-color 5px solid;
+  }
+}
+
+// contact page
+
+// Work Page
+
+.projects {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  .content {
+    margin-top: 10px;
+    width: 100%;
+    border: 3px solid #fff;
+    height: 450px;
+  }
+
+  img {
+    width: 100%;
+    border: 3px solid #fff;
+  }
+}
+
+// Button Styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+
+  &:hover {
+    background: $secondary-color;
+    color: #fff;
+  }
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+}
+
+.wrapper {
+  position: relative;
+  width: 40%;
+  margin: auto;
+  text-align: center;
+  background: darken($primary-color, 50);
+  opacity: 0.6;
+  animation-duration: 3s;
+}
+
+.contact-us {
+  width: 100%;
+  height: auto;
+  padding: 40px 5px;
+}
+
+.title {
+  font-size: 2.5em;
+  line-height: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: $secondary-color;
+  padding: 15px;
+}
+
+.input-fields {
+  padding: 0 30px;
+}
+
+.input-fields .items {
+  width: 100%;
+  padding-bottom: 15px;
+}
+
+.input-fields .items .label {
+  display: block;
+  font-size: 1.5em;
+}
+
+.input-fields .items .input,
+.input-fields .items .input {
+  background: transparent;
+  border: 0;
+  border: 2px solid $secondary-color;
+  width: 100%;
+  font-size: 1.2em;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.text-area {
+  background: transparent;
+  border: 0;
+  border: 2px solid $secondary-color;
+  width: 100%;
+  font-size: 1.5em;
+  border-radius: 3px;
+  color: #fff;
+  height: 70px;
+}
+
+.submit {
+  margin: 10px auto;
+  color: #fff;
+  background: lighten($primary-color, 30);
+  width: 30%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 3px;
+  font-size: 1.3em;
+  border: 0;
+
+  &:hover {
+    @include transition;
+    background: $secondary-color;
+    cursor: pointer;
+    border: 0;
+  }
+}
+
+#anim {
+  animation-duration: 3s;
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 10);
+}
+
+@import "mobile";
